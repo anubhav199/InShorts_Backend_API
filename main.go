@@ -53,7 +53,7 @@ func GetArticleEndpoint(response http.ResponseWriter, request *http.Request) {
 		response.Write([]byte(`{ "message": "` + err.Error() + `" }`))
 		return
 	}
-	json.NewEncoder(response).Encode(people)
+	json.NewEncoder(response).Encode(content)
 }
 
 func GetArticleEndpoint(response http.ResponseWriter, request *http.Request) {
