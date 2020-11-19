@@ -34,7 +34,7 @@ func CreateArticleEndpoint(response http.ResponseWriter, request *http.Request) 
 func GetArticleEndpoint(response http.ResponseWriter, request *http.Request) {
 	response.Header().Set("content-type", "application/json")
 	var content []Article
-	collection := client.Database("thepolyglotdeveloper").Collection("people")
+	collection := client.Database("thepolyglotdeveloper").Collection("content")
 	ctx, _ := context.WithTimeout(context.Background(), 30*time.Second)
 	cursor, err := collection.Find(ctx, bson.M{})
 	if err != nil {
